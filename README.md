@@ -2,9 +2,9 @@
 
 Implementación de la prueba de concepto descrita en la Entrega 2 del proyecto:
 extracción de entidades (T2), diagnóstico probable (T3), clasificación de gravedad (T4)
-y resumen generativo (T5) sobre descripciones de pacientes en español. De esta form, se implementan C2, C3, C4 y C5 según se prometió en la memoria
+y resumen generativo (T5) sobre descripciones de pacientes en español. De esta form, se implementan C2, C3, C4 y C5 según se prometió en la memoria.
 
-(Para descargar datos y modelos, el siguiente [enlace](https://drive.google.com/drive/folders/1y73DAeSr_U1MRMD51E5z8C3Pa8S5G80F?usp=sharing))
+Para descargar datos y modelos, que hay que descomprimir en su carpeta correspondiente de entrenamiento_modelos, usar el siguiente [enlace](https://drive.google.com/drive/folders/1y73DAeSr_U1MRMD51E5z8C3Pa8S5G80F?usp=sharing). Los datos son opcionales para la PoC.
 
 ---
 
