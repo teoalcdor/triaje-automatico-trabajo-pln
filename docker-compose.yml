@@ -1,0 +1,40 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: triaje-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      # Modelos entrenados (solo lectura). Compartidos con el host.
+      - ./entrenamiento_modelos/modelos:/app/modelos:ro
+      # Informes generados — accesibles localmente desde ./reports
+      - ./reports:/app/reports
+      # Caché de HuggingFace persistente entre arranques
+      - hf-cache:/app/.cache/huggingface
+    env_file:
+      - ./backend/.env
+    environment:
+      - MODELS_DIR=/app/modelos
+      - REPORTS_DIR=/app/reports
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 6
+      start_period: 120s
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: triaje-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  hf-cache:

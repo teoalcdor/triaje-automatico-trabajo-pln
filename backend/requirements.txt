@@ -1,0 +1,25 @@
+# --- API ---
+fastapi==0.115.4
+uvicorn[standard]==0.32.0
+pydantic==2.9.2
+python-dotenv==1.0.1
+
+# --- DL ---
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.4.1
+transformers==4.45.2
+accelerate==1.0.1
+sentencepiece==0.2.0
+protobuf==5.28.3
+tokenizers==0.20.1
+safetensors==0.4.5
+
+# --- NER / NLP ---
+spacy==3.7.5
+https://github.com/explosion/spacy-models/releases/download/es_core_news_md-3.7.0/es_core_news_md-3.7.0-py3-none-any.whl
+
+# --- Baseline / utilidades ---
+scikit-learn==1.5.2
+joblib==1.4.2
+numpy==1.26.4
+pandas==2.2.3
