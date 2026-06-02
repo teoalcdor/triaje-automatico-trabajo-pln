@@ -22,20 +22,9 @@ Para descargar datos y modelos, que hay que descomprimir en su carpeta correspon
 ## Despliegue rápido
 
 ### Requisitos
-- Docker Desktop con Docker Compose v2.
+- Docker Desktop con Docker Compose v2 instalado **y en ejecución** (la aplicación debe estar abierta antes de lanzar cualquier comando).
 - Los modelos entrenados deben existir en [entrenamiento_modelos/modelos/](entrenamiento_modelos/modelos/).
 - Conexión a internet solo en el primer arranque para descargar el modelo mT5 de HuggingFace, que quedan cacheados en el volumen `hf-cache`.
-
-### Arranque
-
-```bash
-docker compose up --build
-```
-
-Tras varios minutos, los servicios estarán listos:
-
-- Frontend en http://localhost:3000
-- API en http://localhost:8000/api/health
 
 ### Configuración mediante `.env` (backend)
 
@@ -43,6 +32,7 @@ El backend lee variables desde [backend/.env](backend/.env). Hay un [backend/.en
 
 ```bash
 cp backend/.env.example backend/.env   # solo la primera vez
+copy backend\.env.example backend\.env # para windows
 ```
 
 | Variable | Valores | Por defecto | Descripción |
@@ -56,6 +46,17 @@ docker compose restart backend
 ```
 
 El cambio no requiere `--build`: el `.env` se inyecta en tiempo de ejecución vía `env_file` en [docker-compose.yml](docker-compose.yml). El endpoint `GET /api/health` devuelve el backend de triaje activo para verificarlo.
+
+### Arranque
+
+```bash
+docker compose up --build
+```
+
+Tras varios minutos, los servicios estarán listos:
+
+- Frontend en http://localhost:3000
+- API en http://localhost:8000/api/health
 
 ### Acceso a los informes
 
