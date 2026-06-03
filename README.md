@@ -22,7 +22,7 @@ Para descargar datos y modelos, que hay que descomprimir en su carpeta correspon
 ## Despliegue rápido
 
 ### Requisitos
-- Docker Desktop con Docker Compose v2 instalado **y en ejecución** (la aplicación debe estar abierta antes de lanzar cualquier comando).
+- Docker Desktop con Docker Compose v2 [instalado **y en ejecución**](https://www.youtube.com/watch?v=B6kYsucb128) (la aplicación debe estar abierta antes de lanzar cualquier comando).
 - Los modelos entrenados deben existir en [entrenamiento_modelos/modelos/](entrenamiento_modelos/modelos/).
 - Conexión a internet solo en el primer arranque para descargar el modelo mT5 de HuggingFace, que quedan cacheados en el volumen `hf-cache`.
 
