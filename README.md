@@ -79,8 +79,7 @@ Puedes abrirlos con tu editor o renderizador favorito sin entrar al contenedor.
 2. Pulsa el botón de micrófono.
 3. Escribe la descripción del paciente (en lugar del audio) y envía.
 4. El sistema muestra los síntomas y enfermedades detectados. Confirma para continuar.
-5. Se genera el informe completo y se guarda en `./reports/`. Sepuede descargar.
-6. 
+5. Se genera el informe completo y se guarda en `./reports/`. Se puede descargar.
 ---
 
 ## Estructura
